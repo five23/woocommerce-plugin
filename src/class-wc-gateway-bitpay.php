@@ -85,7 +85,20 @@ function woocommerce_bitpay_init()
             $this->order_button_text  = __('Proceed to BitPay', 'bitpay');
             $this->method_title       = 'BitPay';
             $this->method_description = 'BitPay allows you to accept bitcoin payments on your WooCommerce store.';
-
+            $this->supports           = array(
+                'subscriptions',
+                'products',
+                'subscription_cancellation',
+                'subscription_reactivation',
+                'subscription_suspension',
+                'subscription_amount_changes',
+                'subscription_payment_method_change',
+                'subscription_date_changes',
+                'default_credit_card_form',
+                'refunds',
+                'pre-orders'
+            );
+            
             // Load the settings.
             $this->init_form_fields();
             $this->init_settings();
